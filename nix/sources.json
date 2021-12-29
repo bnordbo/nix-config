@@ -5,10 +5,10 @@
         "homepage": null,
         "owner": "kmonad",
         "repo": "kmonad",
-        "rev": "a7c3dc65212ca6e0b8129235726af05b82683223",
-        "sha256": "16yf435kz0dxcd46zj8jwb3343jbgv4fk5ki61bzxq92gx3312jf",
+        "rev": "768d5e4e1375d80607440bdcd10296ca7f6f00ea",
+        "sha256": "15i6s2mn5bg5cwqhq6j95smadf2vf2f9pczqdpy51hhqv9vspg5n",
         "type": "tarball",
-        "url": "https://github.com/kmonad/kmonad/archive/a7c3dc65212ca6e0b8129235726af05b82683223.tar.gz",
+        "url": "https://github.com/kmonad/kmonad/archive/768d5e4e1375d80607440bdcd10296ca7f6f00ea.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {

@@ -3,7 +3,6 @@
 # Quick fix to avoid checking in secrets
 let
   confidential = import ./.confidential.nix;
-  kmonad = import ./kmonad.nix;
 in
 
 {
@@ -12,6 +11,7 @@ in
       ./hardware-configuration.nix
       ./desktop.nix
       ./home/programs/base.nix
+      ./workstation/kmonad.nix
       <home-manager/nixos>
     ];
 
@@ -65,22 +65,20 @@ in
   ];
 
   users.mutableUsers = false;
-  
-  users.groups = {
-    uinput = {};
-  };
-  
-  users.users.bn = {
-    isNormalUser = true;
-    description = "Bjørn Nordbø";
-    hashedPassword = confidential.hashedPassword;
-    openssh.authorizedKeys.keys = [ "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYU/rtF7vYFljR0womC+toIl9WlKs826pGR+fryHyu/rPE8ke+3t+j87XNZhRRrFFb7tNptGYik3+mAc6MRl3C9Zj87m+coKZ0aIrRff7/an+EwiPHhGtOAEbzMveEzb+7LrvaG3FpdOdAdWtSalFFveX81aDGZxdOp1vn3aOdJMG8BvWkxiwYhuoopeLeywbR10yhy9qd0w8IhD/tzzorcHJBBwqvqgHjTe+nVgZfvT3nqscRln9JYB7CrwQjz6/dK/EniU2nhMwWYxn/ChF96dxvGk/EcUdjxGyFw6ph7wmDPvkhxMUAMV+HqCWBFTCSy8mHGKBx1d1wxeB2r8Q9 bn@snapp.local" ];
-    extraGroups = [
-      "input"
-      "uinput"
-      "video"
-      "wheel"
+
+  users.users = {
+    bn = {
+      isNormalUser = true;
+      description = "Bjørn Nordbø";
+      hashedPassword = confidential.hashedPassword;
+      openssh.authorizedKeys.keys = [ "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYU/rtF7vYFljR0womC+toIl9WlKs826pGR+fryHyu/rPE8ke+3t+j87XNZhRRrFFb7tNptGYik3+mAc6MRl3C9Zj87m+coKZ0aIrRff7/an+EwiPHhGtOAEbzMveEzb+7LrvaG3FpdOdAdWtSalFFveX81aDGZxdOp1vn3aOdJMG8BvWkxiwYhuoopeLeywbR10yhy9qd0w8IhD/tzzorcHJBBwqvqgHjTe+nVgZfvT3nqscRln9JYB7CrwQjz6/dK/EniU2nhMwWYxn/ChF96dxvGk/EcUdjxGyFw6ph7wmDPvkhxMUAMV+HqCWBFTCSy8mHGKBx1d1wxeB2r8Q9 bn@snapp.local" ];
+      extraGroups = [
+        "input"
+        "uinput"
+        "video"
+        "wheel"
       ];
+    };
   };
 
   home-manager.useUserPackages = true;
@@ -106,7 +104,6 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    kmonad
     vim
   ];
 
@@ -142,22 +139,15 @@ in
       };
     };
 
-  # kmonad = {
-  #   enable = true;
-  #   configfiles = [
-  #     ./config.kbd
-  #   ];
-    # };
-
-
-    udev.extraRules =
-      ''
-        # KMonad access to /dev/uinput
-        KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
-      '';
-
     upower = {
       enable = true;
+    };
+  };
+
+  workstation.kmonad = {
+    enable = true;
+    keyboards = {
+      internal.device = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
     };
   };
 

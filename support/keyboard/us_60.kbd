@@ -6,10 +6,22 @@
   lctl lmet lalt           spc            ralt rmet rctl
 )
 
-(deflayer qwerty
-  grv  2    1    3    4    5    6    7    8    9    0    -    =    bspc
+(defalias
+    lme (tap-hold-next-release 200 a lmet)
+    lal (tap-hold-next-release 200 s lalt)
+    lsh (tap-hold-next-release 200 d lsft)
+    lct (tap-hold-next-release 200 f lctl)
+
+    rct (tap-hold-next-release 200 j rctl)
+    rsh (tap-hold-next-release 200 k rsft)
+    ral (tap-hold-next-release 200 l lalt)
+    rme (tap-hold-next-release 200 ; rmet)
+)
+
+(deflayer homerowmods
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lctl @lme @lal @lsh @lct g    h    @rct @rsh @ral @rme '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet rctl
+  caps lmet lalt           spc            ralt rmet rctl
 )
