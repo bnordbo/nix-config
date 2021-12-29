@@ -23,7 +23,7 @@ let
 
       config = lib.mkOption {
         type = lib.types.lines;
-        default = builtins.readFile ../support/keyboard/us_60.kbd;
+        default = builtins.readFile ../support/keyboard/thinkpad_60_no.kbd;
         description = ''
           Keyboard configuration excluding the defcfg block.
         '';
