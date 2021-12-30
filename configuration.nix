@@ -86,6 +86,7 @@ in
   home-manager.users.bn = { pkgs, ... }: {
 
     home.shellAliases = {
+      "ec" = "emacsclient -nq";
       "myip" = "curl http://ipinfo.io/ip";
     };
 
@@ -150,6 +151,11 @@ in
       internal.device = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
     };
   };
+
+  fonts.fonts = with pkgs; [
+    libre-baskerville
+    monoid
+  ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
