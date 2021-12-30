@@ -8,6 +8,17 @@
                                                          left down right
 )
 
+#|
+(deflayer some
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+                                                         _    _    _
+)
+|#
+
 ;; Maybe move this to a separate file?
 (defalias
     lme (tap-hold-next-release 200 a lmet)
@@ -32,6 +43,14 @@
 
     tco (layer-switch colemak)
     tqw (layer-switch qwerty)
+
+    aca (layer-add calc)
+    rca (layer-rem calc)
+
+    tca (layer-toggle calc)
+    cal (tap-next @aca @tca)
+
+    tfn (layer-toggle func)
 )
 
 (deflayer qwerty
@@ -48,6 +67,24 @@
   tab  q    w    f    p    g    j    l    u    y    ;    [    ]
   lctl @lmt @lat @lst @lcl d    h    @rcl @rst @rat @rmt '    \    ret
   lsft z    x    c    v    b    k    m    ,    .    /    rsft
-  caps lmet lalt           spc            ralt prnt @tqw pgup up   pgdn
+  caps @tfn @cal           spc            ralt prnt @tqw pgup up   pgdn
                                                          left down right
+)
+
+(deflayer calc
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    4    5    6    -    _    _
+  _    _    _    _    _    _    *    1    2    3    0    _    _    _
+  _    _    _    _    _    _    +    7    8    9    .    _
+  _    _    @rca           ret            _    _    _    _    _    _
+                                                         _    _    _
+)
+
+(deflayer func
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    volu f4   f5   f6   brup _    _
+  _    _    _    _    _    _    _    f1   f2   f3   f10  _    _    _
+  _    _    _    _    _    _    vold f7   f8   f9   brdn _
+  _    _    @rca           ret            _    _    _    _    _    _
+                                                         _    _    _
 )
