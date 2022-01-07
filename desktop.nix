@@ -39,7 +39,8 @@ in
   };
 
   home-manager.users.bn = {
-    home.keyboard.options = [ "ctrl:swapcaps" ];
+# KMonad does this now
+#    home.keyboard.options = [ "ctrl:swapcaps" ];
     xsession = {
       enable = true;
 #      initExtra = "${pkgs.xorg.xmodmap}/bin/xmodmap ${myCustomLayout}\n";
