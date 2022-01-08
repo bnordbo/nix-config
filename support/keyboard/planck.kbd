@@ -1,0 +1,22 @@
+(defsrc
+  tab  q    w    e    r    t    y    u    i    o    p    bspc
+  esc  a    s    d    f    g    h    j    k    l    ;    '
+  lsft z    x    c    v    b    n    m    ,    .    /    ret
+  lctl lctl lmet lalt        spc          left down up   right
+)
+
+#|
+(deflayer some
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _           _            _    _    _    _
+)
+|#
+
+(deflayer some
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _           _            _    _    _    _
+)
