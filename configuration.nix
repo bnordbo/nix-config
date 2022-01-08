@@ -10,7 +10,7 @@ in
     [
       ./hardware-configuration.nix
       ./desktop.nix
-      ./home/programs/base.nix
+      ./home
       ./workstation/kmonad.nix
       <home-manager/nixos>
     ];

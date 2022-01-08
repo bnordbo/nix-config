@@ -44,12 +44,10 @@ in
     xsession = {
       enable = true;
 #      initExtra = "${pkgs.xorg.xmodmap}/bin/xmodmap ${myCustomLayout}\n";
-      windowManager.xmonad = {
-        enable = true;
-        enableContribAndExtras = true;
-        config = ./config.hs;
-      };
-    };
+       windowManager.xmonad = {
+         enable = true;
+       };
+     };
 
     programs = {
       emacs = {
@@ -61,10 +59,6 @@ in
           epkgs.plantuml-mode
           epkgs.ripgrep
         ]);
-      };
-
-      rofi = {
-        enable = true;
       };
     };
   };

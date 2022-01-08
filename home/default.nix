@@ -1,8 +1,9 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, stdenv, ... }:
 
-{
-  home-manager.users.bn.home.packages = with pkgs; [
+let
+  packages = with pkgs; [
     pkgs.acpilight                      # ACPI backlight control
+    pkgs.alacritty
     pkgs.bazelisk                       # A wrapper to use the right Bazel version
     pkgs.binutils                       # Linker, assembler etc. and utilities like strings
     pkgs.curl                           # Command line tool for transferring files with URL syntax
@@ -21,13 +22,14 @@
     pkgs.rofi                           # Window switcher, run dialog and dmenu replacement
     pkgs.xorg.xev                       # Capture X events
     pkgs.xorg.xmodmap                   # Tool for remapping keys in X
-    ];
+  ];
+in
 
-  home-manager.users.bn.programs = {
-    git = {
-      enable = true;
-      userEmail = "bn@strangedays.no";
-      userName = "Bjørn Nordbø";
-    };
+{
+  imports = (import ./programs);
+
+  # with?
+  home-manager.users.bn.home = {
+    packages = packages;
   };
 }
