@@ -30,6 +30,10 @@ in
 
     useDHCP = false;
     interfaces.wlan0.useDHCP = true;
+
+    hosts = {
+      "172.16.8.20" = ["nurke" "nurke.local"];
+    };
   };
 
   time.timeZone = "Europe/Amsterdam";
