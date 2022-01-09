@@ -145,18 +145,12 @@ in
     monoid
   ];
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # nix = {
-  #   package = pkgs.nix_2_4; # TODO: Remove in NixOS 22.05
-  #   extraOptions = ''
-  #     experimental-features = nix-command flakes
-  #   '';
-  #  };
+  nix = {
+    package = pkgs.nix_2_4; # TODO: Remove in NixOS 22.05
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
