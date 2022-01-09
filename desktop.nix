@@ -24,13 +24,4 @@
       };
     };
   };
-
-  home-manager.users.bn = {
-    xsession = {
-      enable = true;
-       windowManager.xmonad = {
-         enable = true;
-       };
-    };
-  };
 }

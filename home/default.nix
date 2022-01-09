@@ -29,7 +29,21 @@ in
   imports = (import ./programs);
 
   # with?
-  home-manager.users.bn.home = {
-    packages = packages;
+  home-manager = {
+    useUserPackages = true;
+    useGlobalPkgs = true;
+
+    users.bn = {
+      programs.home-manager.enable = true;
+
+      home = {
+        packages = packages;
+
+        shellAliases = {
+          "ec" = "emacsclient -nq";
+          "myip" = "curl http://ipinfo.io/ip";
+        };
+      };
+    };
   };
 }

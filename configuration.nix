@@ -81,29 +81,6 @@ in
     };
   };
 
-  home-manager.useUserPackages = true;
-  home-manager.useGlobalPkgs = true;
-  home-manager.users.bn = { pkgs, ... }: {
-
-    home.shellAliases = {
-      "ec" = "emacsclient -nq";
-      "myip" = "curl http://ipinfo.io/ip";
-    };
-
-    programs.bash = {
-      enable = true;
-    };
-
-    programs.emacs = {
-      enable = true;
-      extraPackages = (epkgs: [
-        epkgs.org-pdftools
-      ]);
-    };
-
-    programs.home-manager.enable = true;
-  };
-
   environment.systemPackages = with pkgs; [
     vim
   ];
