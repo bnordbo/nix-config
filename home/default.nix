@@ -20,6 +20,7 @@ let
     pkgs.python3
     pkgs.ripgrep                        # Fast grep replacement
     pkgs.rofi                           # Window switcher, run dialog and dmenu replacement
+    pkgs.tree                           # Neatly indented directory tree listings
     pkgs.xorg.xev                       # Capture X events
     pkgs.xorg.xmodmap                   # Tool for remapping keys in X
   ];
