@@ -47,19 +47,6 @@ in
        windowManager.xmonad = {
          enable = true;
        };
-     };
-
-    programs = {
-      emacs = {
-        enable = true;
-        extraPackages = (epkgs: [
-          epkgs.magit
-          epkgs.org-pdftools
-          epkgs.org-roam
-          epkgs.plantuml-mode
-          epkgs.ripgrep
-        ]);
-      };
     };
   };
 }

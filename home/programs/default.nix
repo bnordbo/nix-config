@@ -1,4 +1,5 @@
 [
+  ./emacs
   ./git
   ./rofi
   ./xmonad
