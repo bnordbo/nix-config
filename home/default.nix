@@ -26,7 +26,7 @@ let
 in
 
 {
-  imports = (import ./programs);
+  imports = (import ./programs) ++ (import ./services);
 
   # with?
   home-manager = {
