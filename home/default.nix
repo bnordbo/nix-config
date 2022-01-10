@@ -3,7 +3,6 @@
 let
   packages = with pkgs; [
     pkgs.acpilight                      # ACPI backlight control
-    pkgs.alacritty
     pkgs.bazelisk                       # A wrapper to use the right Bazel version
     pkgs.binutils                       # Linker, assembler etc. and utilities like strings
     pkgs.curl                           # Command line tool for transferring files with URL syntax

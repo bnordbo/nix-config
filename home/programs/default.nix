@@ -1,4 +1,5 @@
 [
+  ./alacritty
   ./bash
   ./emacs
   ./git
