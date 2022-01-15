@@ -50,7 +50,12 @@
     tca (layer-toggle calc)
     cal (tap-next @aca @tca)
 
-    tfn (layer-toggle func)
+    tna (layer-toggle nav)
+
+    ;; TODO Add corresponding mappings in xmodmap
+    ae (around ralt ")
+    ost (around ralt o)
+    arn (around ralt a)
 )
 
 (deflayer qwerty
@@ -64,27 +69,27 @@
 
 (deflayer colemak
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    f    p    g    j    l    u    y    ;    [    ]
-  lctl @lmt @lat @lst @lcl d    h    @rcl @rst @rat @rmt '    \    ret
-  lsft z    x    c    v    b    k    m    ,    .    /    rsft
-  caps @tfn @cal           spc            ralt prnt @tqw pgup up   pgdn
+  tab  q    w    f    p    b    j    l    u    y    ;    [    ]
+  lctl @lmt @lat @lst @lcl g    m    @rcl @rst @rat @rmt '    \    ret
+  lsft z    x    c    d    v    k    h    ,    .    /    rsft
+  caps lmet @cal           spc            @tna prnt @tqw pgup up   pgdn
                                                          left down right
 )
 
 (deflayer calc
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    4    5    6    -    _    _
-  _    _    _    _    _    _    *    1    2    3    0    _    _    _
-  _    _    _    _    _    _    +    7    8    9    .    _
+  _    %    ]    }    \)   ~    +    4    5    6    7    _    _
+  _    ^    [    {    \(   |    -    0    1    2    3    =    _    _
+  _    _    _    _    _    #    *    8    9    .    /    _
   _    _    @rca           ret            _    _    _    _    _    _
                                                          _    _    _
 )
 
-(deflayer func
+(deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    volu f4   f5   f6   brup _    _
-  _    _    _    _    _    _    _    f1   f2   f3   f10  _    _    _
-  _    _    _    _    _    _    vold f7   f8   f9   brdn _
+  _    _    _    _    _    _    _    _    up   down _    _    _
+  _    &    @ae  @ost @arn @    _    pgup left rght pgdn _    _    _
+  _    _    _    _    _    ~    _    _    «    »    !    _
   _    _    @rca           ret            _    _    _    _    _    _
                                                          _    _    _
 )

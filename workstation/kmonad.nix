@@ -41,8 +41,8 @@ let
       (defcfg
         input  (device-file "${keyboard.device}")
         output (uinput-sink "kmonad-${keyboard.name}")
-        cmp-seq ralt    ;; Set the compose key to `RightAlt'
-        cmp-seq-delay 5 ;; 5ms delay between each compose-key sequence press
+        cmp-seq KeyScrollLock ;; Effectively unused
+        cmp-seq-delay 5
         fallthrough true
         allow-cmd false
       )
