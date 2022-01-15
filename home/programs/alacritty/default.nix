@@ -9,7 +9,7 @@
           family = "Monoid";
           style = "Regular";
         };
-        size = 9;
+        size = 8;
       };
     };
   };
