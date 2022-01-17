@@ -1,4 +1,5 @@
 [
+  ./lobatt-notify
   ./dunst
   ./emacs
 ]
