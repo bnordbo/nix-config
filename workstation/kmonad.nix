@@ -37,20 +37,29 @@ let
 
   # Create a complete KMonad configuration file:
   mkCfg = keyboard:
-    let defcfg = ''
-      (defcfg
-        input  (device-file "${keyboard.device}")
-        output (uinput-sink "kmonad-${keyboard.name}")
-        cmp-seq KeyScrollLock ;; Effectively unused
-        cmp-seq-delay 5
-        fallthrough true
-        allow-cmd false
-      )
-    '';
+    let
+      defcfg = ''
+        (defcfg
+          input  (device-file "${keyboard.device}")
+          output (uinput-sink "kmonad-${keyboard.name}")
+          cmp-seq KeyScrollLock ;; Effectively unused
+          cmp-seq-delay 5
+          fallthrough true
+          allow-cmd true
+        )
+        '';
+
+      # Mostly for command aliases in order to refer to the packages.
+      defalias = ''
+        (defalias
+          bup (cmd-button "${pkgs.acpilight}/bin/xbacklight -inc 2")
+          bdn (cmd-button "${pkgs.acpilight}/bin/xbacklight -dec 2")
+        )
+      '';
     in
     pkgs.writeTextFile {
       name = "kmonad-${keyboard.name}.cfg";
-      text = defcfg + "\n" + keyboard.config;
+      text = defcfg + "\n" + defalias + "\n" + keyboard.config;
       checkPhase = "${cfg.package}/bin/kmonad -d $out";
     };
 
@@ -71,10 +80,11 @@ let
     name = "kmonad-${keyboard.name}";
     value = {
       description = "KMonad for ${keyboard.device}";
-      script = "${cfg.package}/bin/kmonad ${mkCfg keyboard}";
+      script = "${cfg.package}/bin/kmonad -l info ${mkCfg keyboard}";
       serviceConfig.Restart = "no";
       serviceConfig.User = "kmonad";
-      serviceConfig.SupplementaryGroups = [ "input" "uinput" ];
+      # Need video for brightnessctl command
+      serviceConfig.SupplementaryGroups = [ "input" "uinput" "video" ];
       serviceConfig.Nice = -20;
     };
   };
