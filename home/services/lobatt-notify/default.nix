@@ -16,6 +16,6 @@
       '';
     };
     after = [ "display-manager.service" ];
-    startAt = "*:00/5";
+    startAt = "minutely";
   };
 }
