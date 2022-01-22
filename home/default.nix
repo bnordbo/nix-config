@@ -21,7 +21,13 @@ let
     pkgs.rofi                           # Window switcher, run dialog and dmenu replacement
     pkgs.tree                           # Neatly indented directory tree listings
     pkgs.xorg.xev                       # Capture X events
+    pkgs.xorg.xkbcomp
     pkgs.xorg.xmodmap                   # Tool for remapping keys in X
+  ];
+
+  haskellPackages = with pkgs; [
+    pkgs.ghc                            # The Glasgow Haskell Compiler
+    pkgs.haskell-language-server        # LSP server for GHC
   ];
 in
 
@@ -37,7 +43,7 @@ in
       programs.home-manager.enable = true;
 
       home = {
-        packages = packages;
+        packages = packages ++ haskellPackages;
 
         shellAliases = {
           "ec" = "emacsclient -nq";
