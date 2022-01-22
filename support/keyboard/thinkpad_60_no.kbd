@@ -47,7 +47,7 @@
     tca (layer-toggle calc)
     tna (layer-toggle nav)
 
-    ae (around ralt ")
+    ae (around ralt ')
     ost (around ralt o)
     arn (around ralt a)
 )

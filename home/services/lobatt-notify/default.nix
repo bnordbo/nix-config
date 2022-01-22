@@ -5,7 +5,6 @@
     description = "Post a notification when the battery is running low.";
     serviceConfig = {
       Type = "oneshot";
-      User = "bn";
       ExecStart = pkgs.writeScript "notify-on-low-battery" ''
         #!${pkgs.bash}/bin/bash
         . <(${pkgs.systemd}/bin/udevadm info -q property -p /sys/class/power_supply/BAT0 |
