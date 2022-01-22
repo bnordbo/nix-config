@@ -11,8 +11,6 @@ let
     pkgs.firefox                        # Web browser built from Firefox source tree
     pkgs.font-manager
     pkgs.git                            # Distributed version control system
-    pkgs.haskellPackages.xmobar         # A Minimalistic Text Based Status Bar
-    pkgs.haskellPackages.xmonad-contrib # Extra modules for the XMonad window manager
     pkgs.jq                             # Lightweight and flexible command-line JSON processor
     pkgs.kubectl                        # Kubernetes CLI
     pkgs.niv                            # Easy dependency management for Nix projects
