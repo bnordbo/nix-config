@@ -132,10 +132,6 @@ in
         device = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
         config = builtins.readFile ./support/keyboard/thinkpad_60_no.kbd;
       };
-      planck = {
-        device = "/dev/input/by-id/usb-OLKB_Planck_0-event-kbd";
-        config = builtins.readFile ./support/keyboard/planck.kbd;
-      };
     };
   };
 
