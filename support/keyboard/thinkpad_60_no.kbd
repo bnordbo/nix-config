@@ -28,17 +28,14 @@
 
     rct (tap-hold-next-release 200 j rctl)
     rsh (tap-hold-next-release 200 k rsft)
-    ral (tap-hold-next-release 200 l ralt)
     rme (tap-hold-next-release 200 ; rmet)
 
-    lmt (tap-hold-next-release 200 a lmet)
     lat (tap-hold-next-release 200 r lalt)
     lst (tap-hold-next-release 200 s lsft)
     lcl (tap-hold-next-release 200 t lctl)
 
     rcl (tap-hold-next-release 200 n rctl)
     rst (tap-hold-next-release 200 e rsft)
-    rat (tap-hold-next-release 200 i ralt)
     rmt (tap-hold-next-release 200 o rmet)
 
     tco (layer-switch colemak)
@@ -47,7 +44,7 @@
     tca (layer-toggle calc)
     tna (layer-toggle nav)
 
-    ae (around ralt ")
+    ae (around ralt ')
     ost (around ralt o)
     arn (around ralt a)
 )
@@ -55,7 +52,7 @@
 (deflayer qwerty
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]
-  lctl @lme @lal @lsh @lct g    h    @rct @rsh @ral @rme '    \    ret
+  lctl @lme @lal @lsh @lct g    h    @rct @rsh @lal @rme '    \    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   caps lmet lalt           spc            ralt p    @tco  pgup up   pgdn
                                                          left down right
@@ -64,7 +61,7 @@
 (deflayer colemak
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    f    p    b    j    l    u    y    ;    [    ]
-  lctl @lmt @lat @lst @lcl g    m    @rcl @rst @rat @rmt '    \    ret
+  lctl @lme @lat @lst @lcl g    m    @rcl @rst @lat @rmt '    \    ret
   lsft z    x    c    d    v    k    h    ,    .    /    rsft
   caps lmet @tca           spc            @tna prnt @tqw pgup up   pgdn
                                                          left down right
