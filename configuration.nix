@@ -101,21 +101,22 @@ in
 
     syncthing = {
       enable = true;
+      relay.enable = false;
       user = "bn";
       dataDir = "/home/bn";
       overrideDevices = true;
       overrideFolders = true;
       devices = {
-        "snapp" = { id = "KRPCRQH-QGKGF66-QPXOEZU-ILA6TZ3-CL7HTP4-6RPBWUA-GUPI6M5-ZK5ZYA5"; };
+        "nurke" = { id = "QOWD2RF-ZUG2ARY-EZBVUUT-U4MBPZY-DJRBYW6-JK3RBXY-BGEQHM3-SZXTQAT"; };
       };
       folders = {
         "Contexts" = {
           path = "/home/bn/Contexts";
-          devices = [ "snapp" ];
+          devices = [ "nurke" ];
         };
         "Repository" = {
           path = "/home/bn/Repository";
-          devices = [ "snapp" ];
+          devices = [ "nurke" ];
         };
       };
     };
