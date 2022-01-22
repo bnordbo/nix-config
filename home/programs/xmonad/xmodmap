@@ -1,6 +1,3 @@
-keycode 64  = Mode_switch Alt_L
-keycode 133 = Meta_L      Super_L
-keycode 134 = Meta_R      Super_R
 keycode 108 = Mode_switch Alt_R
 
 keycode 48  = apostrophe  quotedbl    ae          AE
