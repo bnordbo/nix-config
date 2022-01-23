@@ -10,7 +10,10 @@
         . <(${pkgs.systemd}/bin/udevadm info -q property -p /sys/class/power_supply/BAT0 |
           ${pkgs.gnugrep}/bin/egrep 'POWER_SUPPLY_(CAPACITY|STATUS)=')
         if [[ $POWER_SUPPLY_STATUS = Discharging && $POWER_SUPPLY_CAPACITY -lt 10 ]]; then
-          ${pkgs.dunst}/bin/dunstify -u critical "Low battery: $POWER_SUPPLY_CAPACITY"
+          ${pkgs.dunst}/bin/dunstify \
+            -r lobatt_crit \
+            -u critical \
+            "Low battery: $POWER_SUPPLY_CAPACITY"
         fi
       '';
     };
