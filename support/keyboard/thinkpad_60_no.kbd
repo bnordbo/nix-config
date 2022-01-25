@@ -28,7 +28,7 @@
 
     rct (tap-hold-next-release 200 j rctl)
     rsh (tap-hold-next-release 200 k rsft)
-    ral (tap-hold-next-release 200 l ralt)
+    ral (tap-hold-next-release 200 l lalt)
     rme (tap-hold-next-release 200 ; rmet)
 
     lmt (tap-hold-next-release 200 a lmet)
@@ -38,7 +38,7 @@
 
     rcl (tap-hold-next-release 200 n rctl)
     rst (tap-hold-next-release 200 e rsft)
-    rat (tap-hold-next-release 200 i ralt)
+    rat (tap-hold-next-release 200 i lalt)
     rmt (tap-hold-next-release 200 o rmet)
 
     tco (layer-switch colemak)
