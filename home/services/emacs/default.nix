@@ -7,7 +7,7 @@
 
     client = {
       enable = true;
-      arguments = ["-n" "-q"];
+      arguments = ["-c" "-n" "-q"];
     };
   };
 }
