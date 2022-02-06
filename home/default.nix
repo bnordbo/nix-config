@@ -2,25 +2,38 @@
 
 let
   packages = with pkgs; [
-    pkgs.acpilight                      # ACPI backlight control
-    pkgs.bazelisk                       # A wrapper to use the right Bazel version
-    pkgs.binutils                       # Linker, assembler etc. and utilities like strings
-    pkgs.curl                           # Command line tool for transferring files with URL syntax
-    pkgs.fd                             # Simple, fast and user-friendly alternative to find
-    pkgs.file                           # Program that shows the type of files
+    # Applicatins
     pkgs.firefox                        # Web browser built from Firefox source tree
     pkgs.font-manager
-    pkgs.git                            # Distributed version control system
-    pkgs.jq                             # Lightweight and flexible command-line JSON processor
-    pkgs.kubectl                        # Kubernetes CLI
-    pkgs.niv                            # Easy dependency management for Nix projects
-    pkgs.python3
-    pkgs.ripgrep                        # Fast grep replacement
+
+    # Desktop
     pkgs.rofi                           # Window switcher, run dialog and dmenu replacement
-    pkgs.tree                           # Neatly indented directory tree listings
     pkgs.xorg.xev                       # Capture X events
     pkgs.xorg.xkbcomp
     pkgs.xorg.xmodmap                   # Tool for remapping keys in X
+
+    # Development
+    pkgs.bazelisk                       # A wrapper to use the right Bazel version
+    pkgs.binutils                       # Linker, assembler etc. and utilities like strings
+    pkgs.git                            # Distributed version control system
+    pkgs.python3
+
+    # Nix
+    pkgs.niv                            # Easy dependency management for Nix projects
+
+    # Operations
+    pkgs.kubectl                        # Kubernetes CLI
+
+    # System
+    pkgs.acpilight                      # ACPI backlight control
+
+    # Utilities
+    pkgs.curl                           # Command line tool for transferring files with URL syntax
+    pkgs.fd                             # Simple, fast and user-friendly alternative to find
+    pkgs.file                           # Program that shows the type of files
+    pkgs.jq                             # Lightweight and flexible command-line JSON processor
+    pkgs.ripgrep                        # Fast grep replacement
+    pkgs.tree                           # Neatly indented directory tree listings
   ];
 
   haskellPackages = with pkgs; [
