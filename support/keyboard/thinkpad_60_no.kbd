@@ -3,8 +3,8 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]
   caps a    s    d    f    g    h    j    k    l    ;    '    \    ret
   lsft 102d z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt prnt rctl pgup up   pgdn
-                                                         left down right
+  wkup lctl lmet lalt           spc            ralt prnt rctl pgup up   pgdn
+                                                              left down right
 )
 
 #|
@@ -59,17 +59,17 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]
   lctl @lme @lal @lsh @lct g    h    @rct @rsh @ral @rme '    \    ret
   lsft a    z    x    c    v    b    n    m    ,    .    /    rsft
-  caps lmet lalt           spc            ralt p    @tco  pgup up   pgdn
-                                                         left down right
+  _    caps lmet lalt           spc            ralt p    @tco  pgup up   pgdn
+                                                               left down right
 )
 
 (deflayer colemak
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    f    p    b    j    l    u    y    ;    [    ]
-  lctl @lmt @lat @lst @lcl g    m    @rcl @rst @rat @rmt '    \    ret
-  lsft a    z    x    c    d    v    k    h    ,    .    /    rsft
-  _    @eno @tna           spc            @tca prnt @tqw XX   up   XX
-                                                         left down right
+  _    w    f    p    b    _    _    j    l    u    y    _    _
+  q    @lat @lst @lcl g    _    _    m    @rcl @rst @rat ;    _    _
+  _    @lmt x    c    d    v    _    _    k    h    ,    .    @rmt
+  _    z    _    @tna           spc            @tca a    @tqw /    up   XX
+                                                              left down right
 )
 
 ;; Shifted characters does not work.
@@ -78,8 +78,8 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    @ae  @ost @arn _    _    _    _    _    _    _    _
-  _    @dno _              _              _    _    _    _    _    _
-                                                         _    _    _
+  _    _    @dno _              _              _    _    _    _    _    _
+                                                              _    _    _
 )
 
 (deflayer calc
@@ -87,8 +87,8 @@
   _    `    6    5    4    _    _    _    _    _    _    _    _
   _    3    2    1    0    -    _    rctl rsft lalt rmet _    _    _
   _    _    _    9    8    7    =    _    _    _    .    /    _
-  _    _    _              _              _    _    _    _    _    _
-                                                         @bdn _    @bup
+  _    _    _    _              _              _    _    _    _    _    _
+                                                              @bdn _    @bup
 )
 
 (deflayer nav
@@ -96,6 +96,6 @@
   _    _    _    _    _    _    _    \(  \)    [    ]    _    _
   _    lmet lalt lsft lctl _    _    left down up   rght _    _    _
   _    _    _    _    _    _    _    _    home pgdn pgup end  _
-  _    _    _              _              _    _    _    _    volu _
-                                                         next vold prev
+  _    _    _    _              _              _    _    _    _    volu _
+                                                              next vold prev
 )
