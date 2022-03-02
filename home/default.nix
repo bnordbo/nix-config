@@ -8,13 +8,19 @@ let
 
     # Desktop
     pkgs.rofi                           # Window switcher, run dialog and dmenu replacement
+    pkgs.xclip                          # Command line access to the X clipboard
     pkgs.xorg.xev                       # Capture X events
     pkgs.xorg.xkbcomp
+    pkgs.xorg.xmessage
     pkgs.xorg.xmodmap                   # Tool for remapping keys in X
 
     # Development
     pkgs.bazelisk                       # A wrapper to use the right Bazel version
     pkgs.binutils                       # Linker, assembler etc. and utilities like strings
+    pkgs.docker
+    pkgs.docker-compose
+    pkgs.go
+    pkgs.gocode
     pkgs.git                            # Distributed version control system
     pkgs.python3
 
@@ -26,6 +32,7 @@ let
 
     # System
     pkgs.acpilight                      # ACPI backlight control
+    pkgs.usbutils
 
     # Utilities
     pkgs.curl                           # Command line tool for transferring files with URL syntax
