@@ -76,6 +76,7 @@ in
       hashedPassword = confidential.hashedPassword;
       openssh.authorizedKeys.keys = [ "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYU/rtF7vYFljR0womC+toIl9WlKs826pGR+fryHyu/rPE8ke+3t+j87XNZhRRrFFb7tNptGYik3+mAc6MRl3C9Zj87m+coKZ0aIrRff7/an+EwiPHhGtOAEbzMveEzb+7LrvaG3FpdOdAdWtSalFFveX81aDGZxdOp1vn3aOdJMG8BvWkxiwYhuoopeLeywbR10yhy9qd0w8IhD/tzzorcHJBBwqvqgHjTe+nVgZfvT3nqscRln9JYB7CrwQjz6/dK/EniU2nhMwWYxn/ChF96dxvGk/EcUdjxGyFw6ph7wmDPvkhxMUAMV+HqCWBFTCSy8mHGKBx1d1wxeB2r8Q9 bn@snapp.local" ];
       extraGroups = [
+        "docker"
         "input"
         "uinput"
         "video"
@@ -140,6 +141,12 @@ in
     libre-baskerville
     monoid
   ];
+
+  virtualisation = {
+    docker = {
+      enable = true;
+    };
+  };
 
   nix = {
     package = pkgs.nix_2_4; # TODO: Remove in NixOS 22.05
