@@ -3,4 +3,5 @@
   ./dunst
   ./emacs
   ./picom
+  ./screen-locker
 ]
