@@ -1,5 +1,6 @@
 [
   ./alacritty
+  ./autorandr
   ./bash
   ./emacs
   ./git
