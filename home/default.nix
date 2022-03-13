@@ -21,7 +21,6 @@ let
     pkgs.docker-compose
     pkgs.go
     pkgs.gocode
-    pkgs.git                            # Distributed version control system
     pkgs.python3
 
     # Nix
