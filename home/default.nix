@@ -6,6 +6,7 @@ let
     pkgs.firefox                        # Web browser built from Firefox source tree
     pkgs.font-manager
     pkgs.slack
+    pkgs.spotify
 
     # Desktop
     pkgs.rofi                           # Window switcher, run dialog and dmenu replacement
